@@ -44,7 +44,7 @@ public static class Util
     internal static IEnumerable<World> WorldsOnDataCentre(IPlayerCharacter character)
     {
         var dcRow = character.HomeWorld.Value.DataCenter.Value.Region;
-        return Sheets.WorldSheet.Where(world => world.IsPublic && world.DataCenter.Value.Region == dcRow);
+        return Sheets.WorldSheet.Where(world => world.IsPublic && world.DataCenter.Value.Region.RowId == dcRow.RowId);
     }
 
     /// <summary> Iterate over enumerables with additional index. </summary>
