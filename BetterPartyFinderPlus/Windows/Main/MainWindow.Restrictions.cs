@@ -37,12 +37,12 @@ public partial class MainWindow
         filter[ConditionFlags.None] = DrawRestrictionEntry("No Completion Requirement", filter[ConditionFlags.None]);
         filter[ConditionFlags.DutyIncomplete] = DrawRestrictionEntry("Duty Incomplete", filter[ConditionFlags.DutyIncomplete]);
         filter[ConditionFlags.DutyComplete] = DrawRestrictionEntry("Duty Complete", filter[ConditionFlags.DutyComplete]);
-        filter[ConditionFlags.DutyCompleteWeeklyRewardUnclaimed] = DrawRestrictionEntry("Weekly Reward Unclaimed", filter[ConditionFlags.DutyCompleteWeeklyRewardUnclaimed]);
+        filter[ConditionFlags.DutyCompleteWeeklyUnclaimed] = DrawRestrictionEntry("Weekly Reward Unclaimed", filter[ConditionFlags.DutyCompleteWeeklyUnclaimed]);
 
         DrawSeparator();
 
-        filter[DutyFinderSettingsFlags.UndersizedParty] = DrawRestrictionEntry("Undersized Party", filter[DutyFinderSettingsFlags.UndersizedParty]);
-        filter[DutyFinderSettingsFlags.MinimumItemLevel] = DrawRestrictionEntry("Minimum Item Level", filter[DutyFinderSettingsFlags.MinimumItemLevel]);
+        filter[DutyFinderSettingsFlags.UnrestrictedParty] = DrawRestrictionEntry("Undersized Party", filter[DutyFinderSettingsFlags.UnrestrictedParty]);
+        filter[DutyFinderSettingsFlags.MinimumIL] = DrawRestrictionEntry("Minimum Item Level", filter[DutyFinderSettingsFlags.MinimumIL]);
         filter[DutyFinderSettingsFlags.SilenceEcho] = DrawRestrictionEntry("Silence Echo", filter[DutyFinderSettingsFlags.SilenceEcho]);
 
         DrawSeparator();
@@ -52,7 +52,7 @@ public partial class MainWindow
 
         DrawSeparator();
 
-        filter[SearchAreaFlags.DataCentre] = DrawRestrictionEntry("Data Centre Parties", filter[SearchAreaFlags.DataCentre]);
+        filter[SearchAreaFlags.DataCenter] = DrawRestrictionEntry("Data Centre Parties", filter[SearchAreaFlags.DataCenter]);
         filter[SearchAreaFlags.World] = DrawRestrictionEntry("World-Local Parties", filter[SearchAreaFlags.World]);
         filter[SearchAreaFlags.OnePlayerPerJob] = DrawRestrictionEntry("One Player Per Job", filter[SearchAreaFlags.OnePlayerPerJob]);
 

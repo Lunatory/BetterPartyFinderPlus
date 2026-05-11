@@ -52,8 +52,8 @@ internal static class UiCategoryExt
 
     internal static bool ListingMatches(this UiCategory category, IPartyFinderListing listing)
     {
-        var isDuty = listing.Category is DutyCategory.None or DutyCategory.DutyRoulette or DutyCategory.Dungeon
-            or DutyCategory.Guildhest or DutyCategory.Trial or DutyCategory.Raid or DutyCategory.HighEndDuty
+        var isDuty = listing.Category is DutyCategory.None or DutyCategory.Roulette or DutyCategory.Dungeons
+            or DutyCategory.GuildQuests or DutyCategory.Trials or DutyCategory.Raids or DutyCategory.HighEndDuty
             or DutyCategory.PvP; // tldr: "high byte is 0"
         var isNormal = listing.DutyType == DutyType.Normal;
         var isOther = listing.DutyType == DutyType.Other;
@@ -72,12 +72,12 @@ internal static class UiCategoryExt
             UiCategory.HighEndDuty => isNormalDuty && listing.Duty.Value.HighEndDuty,
             UiCategory.Pvp => listing.DutyType == DutyType.Roulette && isDuty && Sheets.ContentRouletteSheet.GetRow(listing.RawDuty).IsPvP || isNormalDuty && listing.Duty.Value.ContentType.RowId == (uint) ContentType2.Pvp,
             UiCategory.QuestBattles => isOther && listing.Category == DutyCategory.GoldSaucer,
-            UiCategory.Fates => isOther && listing.Category == DutyCategory.Fate,
-            UiCategory.TreasureHunt => isOther && listing.Category == DutyCategory.TreasureHunt,
+            UiCategory.Fates => isOther && listing.Category == DutyCategory.FATEs,
+            UiCategory.TreasureHunt => isOther && listing.Category == DutyCategory.TreasureHunts,
             UiCategory.TheHunt => isOther && listing.Category == DutyCategory.TheHunt,
-            UiCategory.GatheringForays => isNormal && listing.Category == DutyCategory.GatheringForay,
-            UiCategory.DeepDungeons => isOther && listing.Category == DutyCategory.DeepDungeon,
-            UiCategory.AdventuringForays => isNormal && listing.Category == DutyCategory.FieldOperation,
+            UiCategory.GatheringForays => isNormal && listing.Category == DutyCategory.GatheringForays,
+            UiCategory.DeepDungeons => isOther && listing.Category == DutyCategory.DeepDungeons,
+            UiCategory.AdventuringForays => isNormal && listing.Category == DutyCategory.FieldOperations,
             UiCategory.VCDungeon => isNormal && listing.Duty.Value.ContentType.RowId == (uint) ContentType2.VCDungeon,
             UiCategory.Chaotic => isNormalDuty && listing.Duty.Value.ContentType.RowId == (uint) ContentType2.Chaotic,
             _ => false,

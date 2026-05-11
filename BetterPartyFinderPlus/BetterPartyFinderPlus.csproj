@@ -1,6 +1,6 @@
-<Project Sdk="Dalamud.NET.Sdk/14.0.0">
+<Project Sdk="Dalamud.NET.Sdk/15.0.0">
     <PropertyGroup>
-        <Version>1.5.7.2</Version>
+        <Version>1.5.7.3</Version>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
@@ -14,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Update="DalamudPackager" Version="14.0.1" />
+        <PackageReference Update="DalamudPackager" Version="15.0.0" />
         <PackageReference Update="DotNet.ReproducibleBuilds" Version="1.2.39" />
     </ItemGroup>
 
